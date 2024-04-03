@@ -33,18 +33,6 @@ module APB_master(input Transfer,
                     PENABLE = 0;
                     ns <= SETUP;
                 end               
-                SETUP:begin
-                    PSELx   = 1;
-                    PENABLE = 0;
-                    PADDR   = Address;            
-                    if (PWRITE)
-                        PWDATA   <= write_data;
-                    
-                    if (!PSLVERR)
-                        ns <= ACCESS;
-                    else
-                        ns <= IDLE;
-                end
                 ACCESS:begin
                     PSELx   = 1;
                     PENABLE = 1;
