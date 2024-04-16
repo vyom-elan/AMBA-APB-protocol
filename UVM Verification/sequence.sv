@@ -1,11 +1,14 @@
 class apb_sequence extends uvm_sequence#(apb_transaction);
+  
   `uvm_object_utils(apb_sequence)
+  
   function new (string name = "");
     super.new(name);
-  endfunction  
+  endfunction
+  
   task body();
-    apb_transaction rw_trans;
-    repeat (70) begin
+    apb_transaction rw_trans;=
+    repeat (80) begin
       rw_trans=new();
       start_item(rw_trans);
       assert(rw_trans.randomize());
