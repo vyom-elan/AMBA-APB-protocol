@@ -32,7 +32,10 @@ interface dut_if;
   modport passive(clocking monitor_cb);
 
 endinterface
+
+
 module apb_slave(dut_if dif);
+
   logic [31:0] mem [0:256];
   logic [1:0] apb_st;
   const logic [1:0] SETUP=0;
